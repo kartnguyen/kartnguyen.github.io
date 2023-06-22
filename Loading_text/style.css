@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background: #111;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.text {
+    font-size: 2em;
+    color: aqua;
+    position: relative;
+    text-transform: uppercase;
+}
+
+h1::after {
+    content: "|";
+    font-family: sans-serif;
+    font-weight: 100;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    height: 100px;
+    right: 0px;
+    background-color: #111;
+    width: 100%;
+    animation: text_move 5s infinite steps(12),
+        cursor 1s infinite;
+}
+.img {
+    width: 300px;
+}
+.gold {
+    aspect-ratio: 9/16;
+    background: aqua no-repeat center;
+    background-size: cover;
+    background-image: url(./images/355132796_2492422554243965_1671120243022924812_n.jpg);
+    border: 5px solid white;
+    border-radius: 12px;
+    animation: img 5s infinite;
+    opacity: 0;
+}
+@keyframes text_move {
+    to {
+        width: 0;
+    }
+}
+
+@keyframes cursor {
+    50% {
+        color: transparent;
+    }
+}
+@keyframes img {
+    0%,50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
