@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Text</title>
+    <link rel="shortcut icon" href="./images/icons8-k-64.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="pyro hidden">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+    <main>
+        <img class="button" src="./images/click-cursor-icon-with-click-here-button-free-png.webp" alt="">
+        <div class="content hidden">
+            <div class="section-1">
+                <div class="text">
+                    <h1>Chúc mừng sinh nhật <span>GOLD - Gia Hưng</span>!!</h1>
+                </div>
+                <div class="img">
+                    <div class="gold"></div>
+                </div>
+            </div>
+            <div class="section-2 hidden">
+                <div class="text">
+                    <h1>Cả nhà yêu con rất nhiều !!</h1>
+                </div>
+            </div>
+            <audio>
+                <source src="./mp3/Song.mp3" type="audio/mpeg">
+                <source src="./mp3/Song.mp3" type="audio/ogg">
+            </audio>
+        </div>
+        <div class="images hidden">
+            <div class="fade">
+                <div>
+                    <img src="./images/278941414_2151307478355476_121993947430212440_n.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./images/z4453878443959_1c7e8597cc3bf37b56f46069a701cea2.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./images/289618713_1862922140578484_7196121014908138802_n.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./images/z4453878456401_3f97e9f5e0c3a0ec139e48e2ba380be7.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./images/z4060091608368_9bc5f92619b825288e36e79f547a52a6.jpg" alt="">
+                </div>
+                <div>
+                    <img src="./images/z4453496272586_1c30c3a15a54bb2fdfd6cb7759add564.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="section-3 hidden">
+            <div class="gold-1"></div>
+        </div>
+    </main>
+    <script>
+        document.querySelector('.button').addEventListener('click', () => {
+            document.querySelector('audio').play();
+            document.querySelector('.button').classList.add('hidden');
+            document.querySelector('.pyro').classList.remove('hidden');
+            document.querySelector('.content').classList.remove('hidden');
+            setTimeout(block_section, 10000)
+            setTimeout(hidden_section, 20000)
+            setTimeout(last,128000)
+        })
+        function block_section() {
+            document.querySelector('.section-2').classList.remove('hidden');
+            document.querySelector('.section-1').classList.add('hidden');
+        }
+        function hidden_section() {
+            document.querySelector('.content').classList.add('hidden');
+            document.querySelector('.images').classList.remove('hidden');
+        }
+        function last() {
+            document.querySelector('.content').classList.remove('hidden');
+            document.querySelector('.images').classList.add('hidden');
+            document.querySelector('.section-2').classList.add('hidden');
+            document.querySelector('.section-3').classList.remove('hidden');
+        }
+        let slides = document.querySelectorAll('.fade div');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 8000);
+
+        function nextSlide() {
+            slides[currentSlide].style.display = 'none';
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.display = 'block';
+        }
+
+    </script>
+</body>
+
+</html>

@@ -10,7 +10,12 @@ body {
     background: #111;
 }
 
-main {
+main,
+.content,
+.section-1,
+.section-2,
+.section-3,
+.images {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -31,16 +36,26 @@ h1::after {
     color: #fff;
     position: absolute;
     top: -5px;
-    height: 100px;
     right: 0px;
     background-color: #111;
     width: 100%;
-    animation: text_move 10s infinite steps(38),
+    animation: text_move 10s steps(38),
         cursor 1s infinite;
 }
 
 .img {
     width: 300px;
+    position: relative;
+}
+
+.button {
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    cursor: pointer;
 }
 
 .gold {
@@ -50,12 +65,22 @@ h1::after {
     background-image: url(./images/355132796_2492422554243965_1671120243022924812_n.jpg);
     border: 5px solid white;
     border-radius: 12px;
-    animation: img 10s infinite;
+    animation: img 10s;
     opacity: 0;
+}
+
+#autoplay {
+    position: absolute;
+    bottom: 0;
+    background-color: #111;
 }
 
 span {
     color: yellow;
+}
+
+.hidden {
+    display: none;
 }
 
 @keyframes text_move {
@@ -84,6 +109,7 @@ span {
     right: 10px;
     bottom: 10px;
 }
+
 .pyro>.before,
 .pyro>.after {
     position: absolute;
@@ -360,5 +386,53 @@ span {
     99.9% {
         margin-top: 30%;
         margin-left: 80%;
+    }
+}
+
+.images img {
+    width: 500px;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 12px;
+    animation:  fade 8s infinite linear;
+}
+@keyframes fade {
+    50%{
+        opacity: 1;
+    }
+    0%,100%{
+        opacity: 0;
+    }
+}
+.fade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+.fade div {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.gold-1 {
+    background: aqua no-repeat center;
+    background-size: cover;
+    background-image: url(./images/279392200_1826755877528444_608631222118861215_n.jpg);
+    border: 5px solid white;
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+    height: 100vh;
+    animation: last_img 30s;
+}
+@keyframes last_img {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: 100vh;
     }
 }
