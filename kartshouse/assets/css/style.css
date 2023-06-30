@@ -1,0 +1,281 @@
+:root {
+    --primary: #FFE3E7;
+    --button: #FA4BB2;
+    --hover: #E04FE3;
+    --footer: #CD4BFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary);
+    position: relative;
+}
+
+.container {
+    display: block;
+    max-width: 1024px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: #111;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    z-index: 11;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    z-index: 99;
+}
+
+.bg-dark {
+    background-color: #111;
+}
+
+.top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+.rotate {
+    transform: rotate(-180deg);
+}
+
+/* Header */
+header {
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.btn-login {
+    padding: 8px 12px;
+    background-color: var(--button);
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.btn-login:hover {
+    background-color: var(--hover);
+}
+
+.navbar-toogle {
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.navbar-toogle:hover {
+    border: 1px solid var(--hover);
+    color: var(--hover);
+}
+
+.login-mobile {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.login {
+    display: none;
+}
+
+
+
+.nav-item a:hover {
+    color: var(--hover);
+}
+
+.dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+.dropdown-menu div {
+    padding-top: 12px;
+    padding-left: 60px;
+}
+.dropdown-item {
+    padding: 6px;
+}
+
+.nav-link.active {
+    color: var(--button);
+}
+
+.nav-item {
+    font-weight: 500;
+    padding: 16px;
+    border-bottom: 1px solid rgb(142, 142, 142);
+}
+
+.nav-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu div {
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width:767px) {
+    .navbar-collapse {
+        display: none;
+        background-color: var(--primary);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        flex-direction: column;
+        z-index: 99;
+    }
+    .navbar-collapse.show {
+        display: flex;
+    }
+    
+}
+@media (min-width:768px) {
+    .navbar-collapse {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .navbar-nav {
+        flex: 0 0 80%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navbar-toogle,
+    .login-mobile {
+        display: none;
+    }
+
+    .login {
+        display: block;
+    }
+
+    .logo img {
+        width: 250px;
+    }
+
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+        /* padding-top: 40px; */
+        position: relative;
+    }
+    .dropdown-menu {
+        display: none;
+    }
+    .dropdown-menu div {
+        position: absolute;
+        left: -17px;
+        z-index: 99;
+        border: none;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 24px 12px 12px;
+        border-radius: 4px;
+    }
+
+    .nav-item {
+        font-weight: 500;
+        padding: 8px 12px;
+        border-bottom: none;
+    }
+}
+
+.fadeInLeft {
+	animation: fadeInLeft .4s;
+}
+
+.fadeOutLeft {
+	animation: fadeOutLeft .4s;
+}
+
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translate(-5%, 0);
+	}
+	to {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes fadeOutLeft {
+	from {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+	to {
+		opacity: 0;
+		transform: translate(-5%, 0);
+	}
+}
+/* Section */
+section {
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+.item {
+    background: aqua no-repeat center;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+}
