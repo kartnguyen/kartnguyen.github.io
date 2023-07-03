@@ -36,7 +36,7 @@ $('.owl-carousel').owlCarousel({
     autoplayTimeout:3000,
 });
 
-$('.fixed-top').css('top', $('header').height());
+$('.fixed-top');
     $(window).scroll(function () {
         if ($(this).scrollTop()) {
             $('.fixed-top').addClass('top');
@@ -44,4 +44,3 @@ $('.fixed-top').css('top', $('header').height());
             $('.fixed-top').removeClass('top');
         }
     });
-    
