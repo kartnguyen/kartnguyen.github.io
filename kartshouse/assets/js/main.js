@@ -1,3 +1,5 @@
+const api_url = 'https://64a662ab096b3f0fcc7fa7e0.mockapi.io/';
+
 window.addEventListener("scroll", function (e) {
   if (window.pageYOffset > 20) {
     document.querySelector("header").classList.add("fixed-top");
