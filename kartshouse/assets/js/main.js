@@ -1,5 +1,3 @@
-const api_url = 'https://64a662ab096b3f0fcc7fa7e0.mockapi.io/';
-
 window.addEventListener("scroll", function (e) {
   if (window.pageYOffset > 20) {
     document.querySelector("header").classList.add("fixed-top");
@@ -51,3 +49,14 @@ $(".owl-carousel").owlCarousel({
   autoplayTimeout: 5000,
   autoplayTimeout: 2000,
 });
+
+let nav = document.querySelectorAll('.nav-bar p');
+nav.forEach((item) => {
+  item.addEventListener('click', function(e) {
+    let x = document.querySelector('.nav-bar .active');
+    e.currentTarget.classList.add('active');
+    if (x!=e.currentTarget){
+        x.classList.remove('active');
+    }
+  })
+})

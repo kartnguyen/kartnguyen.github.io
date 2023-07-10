@@ -45,10 +45,12 @@
                         <img src="./assets/images/logo.svg" alt="">
                     </div>
                     <div class="nav-bar">
-                        <a href="" class="active">Trang chủ</a>
-                        <a href="">Sản phẩm</a>
-                        <a href="">Về chúng tôi</a>
-                        <a href="">Liên hệ</a>
+                        <a href="index.html">
+                            <p class="home active">Trang chủ</p>
+                        </a>
+                        <p class="products">Sản phẩm</p>
+                        <p class="about-us">Về chúng tôi</p>
+                        <p class="contact">Liên hệ</p>
                     </div>
                     <div class="login">
                         <a href="">
@@ -64,7 +66,7 @@
         </div>
     </header>
     <main>
-        <section>
+        <section class="home">
             <div class="container title" style="min-height: 550px;" data-aos="fade-down" data-aos-easing="linear"
                 data-aos-duration="500">
                 <div class="content">
@@ -89,7 +91,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="home">
             <div class="container title left" style="min-height: 450px;" data-aos="fade-left" data-aos-easing="linear"
                 data-aos-duration="500">
                 <div class="img" style="background-image: url(./assets/images/cake/cake-7.jpg);"></div>
@@ -101,7 +103,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="home">
             <div class="container title" style="min-height: 420px;" data-aos="fade-right" data-aos-easing="linear"
                 data-aos-duration="500">
                 <div class="content">
@@ -115,7 +117,7 @@
                 <div class="img" style="background-image: url(./assets/images/cake/cake-5.jpg);"></div>
             </div>
         </section>
-        <section>
+        <section class="home">
             <div class="container title left" style="min-height: 500px;" data-aos="fade-left" data-aos-easing="linear"
                 data-aos-duration="500">
                 <div class="img" style="background-image: url(./assets/images/cake/cake-10.jpg);"></div>
@@ -127,6 +129,7 @@
                 </div>
             </div>
         </section>
+
     </main>
     <footer>
         <div class="container footer" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="500">
@@ -197,6 +200,7 @@
     <script src="./assets/libs/owlcarousel/owl.carousel.min.js"></script>
     <script src="./assets/libs/aos-master/aos.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script type="module" src="./assets/js/components/app.js"></script>
     <script>
         AOS.init();
     </script>

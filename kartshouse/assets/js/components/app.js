@@ -1,11 +1,12 @@
-const express = require('express');
-const app = express();
-const client_view = require('./render_client.js');
+let app = document.querySelector('main');
 
-app.use('/assets', express.static('assets'));
-app.listen(3000, () => console.log('Services start :>'));
+async function init_app() {
+	let page = await import('../pages/product.js');
+	let render = await page.student_page();
+	app.appendChild(await render);
+}
 
-app.get('/*', (req, res, next) => {
-  res.setHeader('Content-Type', 'text/html');
-  res.send(client_view.html());
+document.querySelector('.products').addEventListener('click', function(e) {
+    app.innerHTML = '';
+  init_app();
 })
