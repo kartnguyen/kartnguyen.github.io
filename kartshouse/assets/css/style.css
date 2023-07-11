@@ -345,6 +345,7 @@ section:first-child {
         width: 100%;
         max-width: 180px;
         display: block;
+	    margin: 0;
     }
 
     .login {
