@@ -104,10 +104,10 @@ span {
 /* phao hoa */
 .pyro {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .pyro>.before,
@@ -394,16 +394,20 @@ span {
     margin: 0 auto;
     border: 2px solid white;
     border-radius: 12px;
-    animation:  fade 8s infinite linear;
+    animation: fade 8s infinite linear;
 }
+
 @keyframes fade {
-    50%{
+    50% {
         opacity: 1;
     }
-    0%,100%{
+
+    0%,
+    100% {
         opacity: 0;
     }
 }
+
 .fade {
     display: flex;
     justify-content: center;
@@ -411,11 +415,13 @@ span {
     overflow: hidden;
     width: 100%;
 }
+
 .fade div {
     width: 100%;
     height: 100%;
     display: none;
 }
+
 .gold-1 {
     background: aqua no-repeat center;
     background-size: cover;
@@ -426,13 +432,56 @@ span {
     height: 100vh;
     animation: last_img 30s;
 }
+
 @keyframes last_img {
     from {
         opacity: 0;
         height: 0;
     }
+
     to {
         opacity: 1;
         height: 100vh;
+    }
+}
+
+@media (max-width:768px) {
+    .section-1 .text {
+        width: 50%;
+    }
+
+    .section-1 .img {
+        width: 50%;
+    }
+
+    .images img {
+        width: 100%;
+        height: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    h1::after {
+        display: none;
+    }
+
+    .gold-1 {
+        height: 50vh;
+        animation: last_img_mobile 30s;
+    }
+
+    @keyframes last_img_mobile {
+        from {
+            opacity: 0;
+            height: 0;
+        }
+
+        to {
+            opacity: 1;
+            height: 50vh;
+        }
     }
 }
